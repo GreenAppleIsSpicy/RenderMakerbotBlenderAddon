@@ -3,6 +3,8 @@ import sys
 
 #Using the tutorial by CG Python: https://www.youtube.com/watch?v=VOMb_zmVrtk
 
+WorkingPanel = bpy.data.texts["BlenderPythonMakerbot.py"].as_module()
+
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
 VERSION = (0, 1, 0)
 MODULE_NAME = "RenderMakerbotBlender"
@@ -26,6 +28,7 @@ def register():
 
     print(f"\tadding {MODULE_NAME} to sys path: {ADDON_FOLDER_PATH}")
     sys.path.append(ADDON_FOLDER_PATH)
+    WorkingPanel.register()
 
 
 def unregister():
@@ -33,6 +36,7 @@ def unregister():
 
     print(f"\tremoving {MODULE_NAME} from sys path: {ADDON_FOLDER_PATH}")
     sys.path.remove(ADDON_FOLDER_PATH)
+    WorkingPanel.unregister()
 
 
 if __name__ == "__main__":
