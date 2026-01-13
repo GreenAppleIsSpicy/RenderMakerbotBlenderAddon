@@ -1,10 +1,9 @@
 import os
 import sys
-import bpy
 
 #Using the tutorial by CG Python: https://www.youtube.com/watch?v=VOMb_zmVrtk
 
-WorkingPanel = bpy.data.texts["Panel.py"].as_module()
+import Panel as WorkingPanel
 
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
 VERSION = (0, 1, 0)
