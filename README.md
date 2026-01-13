@@ -1,4 +1,6 @@
 # RenderMakerbotBlenderAddon
+##WIP
+
 Personal Addon for blender that allows someone to render 3D prints sliced for the MakerBot Replicator 5th Gen and Replicator+. 
 This is not intended for adding your 3D prints to a preexisting Blender scene, but instead intended to be used for visualizing sliced files since MakerBot does not provide a renderer. 
 If used on a preexisting scene, all scene assets will be deleted so please be careful. 
