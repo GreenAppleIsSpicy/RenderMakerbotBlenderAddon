@@ -1,8 +1,8 @@
 import bpy 
 from bpy.props import StringProperty
 import os 
+import BlenderPythonMakerbot as Makerbot
 
-Makerbot = bpy.data.texts["BlenderPythonMakerbot.py"].as_module()
 
 class MainPanel(bpy.types.Panel):
     bl_idname = "Test"
@@ -29,6 +29,7 @@ class silly_OT_operator(bpy.types.Operator):
     
     def execute(self, context):
         filename = os.path.normpath(bpy.path.abspath(bpy.context.scene.file_))
+        
         Makerbot.main(filename)
         
         return {"FINISHED"}
@@ -62,3 +63,4 @@ if __name__ == "__main__":
     
 #    Makerbot.main(filename)
     
+
