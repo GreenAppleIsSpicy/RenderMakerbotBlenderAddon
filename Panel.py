@@ -6,7 +6,7 @@ import BlenderPythonMakerbot as Makerbot
 
 class MainPanel(bpy.types.Panel):
     bl_idname = "Test"
-    bl_label = "Test File"
+    bl_label = "Import MakerBot File"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = 'View'
@@ -63,4 +63,5 @@ if __name__ == "__main__":
     
 #    Makerbot.main(filename)
     
+
 
