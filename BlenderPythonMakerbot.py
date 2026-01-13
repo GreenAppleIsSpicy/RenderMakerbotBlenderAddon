@@ -285,8 +285,14 @@ def renderMakerbot(PC):
     
     bpy.context.scene.render.engine = 'CYCLES'
     bpy.context.scene.cycles.device = 'GPU'
-    bpy.data.screens["Scripting"].areas[5].spaces[0].shading.type = 'RENDERED'
-    
+    # bpy.data.screens["Scripting"].areas[5].spaces[0].shading.type = 'RENDERED'
+
+    for area in bpy.data.screens["Layout"].areas:
+        if area.type == 'VIEW_3D':
+            area.spaces[0].shading.type = 'RENDERED'
+            break
+    print(" ")
+            
     PLANE.hide_set(True)
     
 
@@ -438,4 +444,5 @@ def main(filepath):
     file = import_makerbot(filepath)
     Pointcloud = import_ply(file)
     renderMakerbot(Pointcloud)
+
     create_scene()
