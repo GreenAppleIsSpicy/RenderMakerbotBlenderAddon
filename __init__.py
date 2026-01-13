@@ -3,7 +3,7 @@ import sys
 
 #Using the tutorial by CG Python: https://www.youtube.com/watch?v=VOMb_zmVrtk
 
-import Panel as WorkingPanel
+
 
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
 VERSION = (0, 1, 0)
@@ -22,6 +22,7 @@ bl_info = {
     "doc_url": "https://github.com/GreenAppleIsSpicy/RenderMakerbotBlenderAddon",
 }
 
+import Panel as WorkingPanel
 
 def register():
     print(f'ENABLED "{ADDON_NAME}" addon')
