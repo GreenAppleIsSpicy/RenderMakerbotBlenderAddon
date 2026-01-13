@@ -7,3 +7,7 @@ If used on a preexisting scene, all scene assets will be deleted so please be ca
 It should, however, be possible to bring in the generated model after it's been imported in a separate scene.
 
 In the case this addon does not work it should display an error message as the name of the imported object. Weird, I know but you're just gonna have to learn to handle it.
+
+## How to Use
+
+It should be relatively easy, once imported just open the view panel on the sidebar and there should be an extra section to open a file.
