@@ -22,13 +22,14 @@ bl_info = {
     "doc_url": "https://github.com/GreenAppleIsSpicy/RenderMakerbotBlenderAddon",
 }
 
-import Panel as WorkingPanel
+
 
 def register():
     print(f'ENABLED "{ADDON_NAME}" addon')
 
     print(f"\tadding {MODULE_NAME} to sys path: {ADDON_FOLDER_PATH}")
     sys.path.append(ADDON_FOLDER_PATH)
+    import Panel as WorkingPanel
     WorkingPanel.register()
 
 
