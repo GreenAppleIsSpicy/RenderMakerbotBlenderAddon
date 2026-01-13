@@ -1,5 +1,6 @@
 import os
 import sys
+import bpy
 
 #Using the tutorial by CG Python: https://www.youtube.com/watch?v=VOMb_zmVrtk
 
