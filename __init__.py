@@ -4,7 +4,7 @@ import bpy
 
 #Using the tutorial by CG Python: https://www.youtube.com/watch?v=VOMb_zmVrtk
 
-WorkingPanel = bpy.data.texts["BlenderPythonMakerbot.py"].as_module()
+WorkingPanel = bpy.data.texts["Panel.py"].as_module()
 
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
 VERSION = (0, 1, 0)
