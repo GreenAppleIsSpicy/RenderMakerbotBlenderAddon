@@ -11,3 +11,5 @@ In the case this addon does not work it should display an error message as the n
 ## How to Use
 
 It should be relatively easy, once imported just open the view panel on the sidebar and there should be an extra section to open a file.
+
+You will also need a folder labeled "pointclouds" in the same folder that contains your .makerbot file.
