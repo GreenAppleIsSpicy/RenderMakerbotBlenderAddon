@@ -295,21 +295,6 @@ def renderMakerbot(PC):
             
     PLANE.hide_set(True)
     
-
-def bring_in_o3d():
-    '''
-    bring_in_o3d()
-    
-    Does what it says.
-    
-    Installs Open3D, usually not necessay but provides an alternative if the PLY is not being created correctly.
-    recommended to not run if you have Open3D installed already as it will take a while.
-    
-    '''
-    
-    import subprocess
-    import sys
-    
     subprocess.run([f'{sys.executable}', "-m", "pip", "install", "open3d", "--target", "4.3\\python\\lib\\site-packages"], check=True)
     
 def import_makerbot(location, file_name = ""):
@@ -399,24 +384,14 @@ def import_makerbot(location, file_name = ""):
 
     points /= 1
     
-    use_o3d = False
-    
-    k = save_pointcloud(points, colors, location, name, use_o3d)
+    k = save_pointcloud(points, colors, location, name)
 
     return f"{location}\\..\\pointclouds\\{name}.ply"
 
-def save_pointcloud(points, colors, location, name, use_o3d=False):
+def save_pointcloud(points, colors, location, name):
     l = len(points)
-    if use_o3d == True:
-        import open3d as o3d
 
-        pcd = o3d.geometry.PointCloud()
-        pcd.points = o3d.utility.Vector3dVector(points)
-        pcd.colors = o3d.utility.Vector3dVector(colors)
-        o3d.io.write_point_cloud(f"{location}\\..\\pointclouds\\{name}.ply", pcd)
-        
-    else:
-        text = f'''ply
+    text = f'''ply
 format ascii 1.0
 comment Created by GreenAppleIsSpicy
 element vertex {l}
@@ -429,13 +404,13 @@ property uchar blue
 end_header
 '''
 
-        ucolors = np.array(255 * colors, dtype=np.uint8)
-        ucolors = np.clip(ucolors, 0, 40)
+    ucolors = np.array(255 * colors, dtype=np.uint8)
+    ucolors = np.clip(ucolors, 0, 40)
 
-        with open(f"{location}\\..\\pointclouds\\{name}.ply", "w") as text_file:
-            text_file.write(text)
-            for i in range(l):
-                text_file.write(f"{points[i, 0]} {points[i, 1]} {points[i, 2]} {ucolors[i, 0]} {ucolors[i, 1]} {ucolors[i, 2]} \n")
+    with open(f"{location}\\..\\pointclouds\\{name}.ply", "w") as text_file:
+        text_file.write(text)
+        for i in range(l):
+            text_file.write(f"{points[i, 0]} {points[i, 1]} {points[i, 2]} {ucolors[i, 0]} {ucolors[i, 1]} {ucolors[i, 2]} \n")
     
     return f"{location}\\..\\pointclouds\\{name}.ply"
     
@@ -446,3 +421,4 @@ def main(filepath):
     renderMakerbot(Pointcloud)
 
     create_scene()
+
