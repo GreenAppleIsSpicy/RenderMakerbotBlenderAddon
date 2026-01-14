@@ -202,7 +202,7 @@ def import_ply(location):
     connect_nodes(pcgn, Position3, "Position", Multiply4, "Vector")
     connect_nodes(pcgn, Multiply4, "Vector", PointsToCurves, "Curve Group ID")
     
-    ResampleCurve.inputs[2].default_value = 10000
+    ResampleCurve.inputs[3].default_value = 10000
     
     RandomValue.inputs[0].default_value = [-1, -1, 0]
     RandomValue.inputs[1].default_value = [1, 1, 0]
@@ -446,3 +446,4 @@ def main(filepath):
     renderMakerbot(Pointcloud)
 
     create_scene()
+
