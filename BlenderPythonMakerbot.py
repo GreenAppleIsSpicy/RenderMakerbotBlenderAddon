@@ -295,8 +295,6 @@ def renderMakerbot(PC):
             
     PLANE.hide_set(True)
     
-    subprocess.run([f'{sys.executable}', "-m", "pip", "install", "open3d", "--target", "4.3\\python\\lib\\site-packages"], check=True)
-    
 def import_makerbot(location, file_name = ""):
     '''
     import_makerbot(location, file_name):
@@ -421,4 +419,5 @@ def main(filepath):
     renderMakerbot(Pointcloud)
 
     create_scene()
+
 
