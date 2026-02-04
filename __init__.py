@@ -29,8 +29,8 @@ def register():
 
     print(f"\tadding {MODULE_NAME} to sys path: {ADDON_FOLDER_PATH}")
     sys.path.append(ADDON_FOLDER_PATH)
-    import Panel as WorkingPanel
-    WorkingPanel.register()
+    import Panel
+    Panel.register()
 
 
 def unregister():
@@ -38,7 +38,8 @@ def unregister():
 
     print(f"\tremoving {MODULE_NAME} from sys path: {ADDON_FOLDER_PATH}")
     sys.path.remove(ADDON_FOLDER_PATH)
-    WorkingPanel.unregister()
+    import Panel
+    Panel.unregister()
 
 
 if __name__ == "__main__":

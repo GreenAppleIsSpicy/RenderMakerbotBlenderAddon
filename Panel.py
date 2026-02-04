@@ -53,15 +53,17 @@ def register():
 
 def unregister():
     bpy.utils.unregister_class(MainPanel)
+    bpy.utils.unregister_class(silly_OT_operator)
 
     
-if __name__ == "__main__":
-    register()
+# if __name__ == "__main__":
+#     register()
 #    filename = os.path.normpath(bpy.path.abspath(bpy.context.scene.file_))
 #    print(filename)
     
     
 #    Makerbot.main(filename)
     
+
 
 
