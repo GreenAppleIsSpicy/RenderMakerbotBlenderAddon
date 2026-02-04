@@ -1,4 +1,4 @@
-# Render Makerbot Blender Addon (4.x Compatible)
+# Render Makerbot Blender Addon
 ## Work in Progress
 
 Personal Addon for blender that allows someone to render 3D prints sliced for the MakerBot Replicator 5th Gen and Replicator+. 
@@ -13,3 +13,9 @@ In the case this addon does not work it should display an error message as the n
 It should be relatively easy, once imported just open the view panel on the sidebar and there should be an extra section to open a file.
 
 You will also need a folder labeled "pointclouds" in the same folder that contains your .makerbot file.
+
+# Recent Changes
+
+Add-on is now cross compatible between Blender versions without needing a separate branch. 
+The code has also been cleaned up a bit to make it more readable. 
+Unnecessary functions are now gone and all branches are now closed. 
