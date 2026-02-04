@@ -38,6 +38,7 @@ def unregister():
 
     print(f"\tremoving {MODULE_NAME} from sys path: {ADDON_FOLDER_PATH}")
     sys.path.remove(ADDON_FOLDER_PATH)
+    import Panel as WorkingPanel
     WorkingPanel.unregister()
 
 
