@@ -6,8 +6,8 @@ import sys
 
 
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
-VERSION = (0, 1, 0)
-MODULE_NAME = "RenderMakerbotBlender"
+VERSION = (0, 1, 1)
+MODULE_NAME = "RenderMakerbotBlender active patch"
 ADDON_NAME = (
     f"RenderMakerbotBlender v{VERSION[0]}.{VERSION[1]}.{VERSION[2]}"
 )
