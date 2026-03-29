@@ -296,11 +296,10 @@ def renderMakerbot(PC):
             
     PLANE.hide_set(True)
     
-def import_makerbot(location, file_name = ""):
+def import_makerbot(location):
     '''
-    import_makerbot(location, file_name):
+    import_makerbot(location):
         location:   string
-        file_name:  string
         
     Does not do what it says.
     
@@ -317,9 +316,7 @@ def import_makerbot(location, file_name = ""):
     import numpy as np
     import zipfile
     
-
-    files_name = file_name
-    name = "TEST"
+    name = location.split("\\")[-1].split(".")[0]
 
 
     with zipfile.ZipFile(f'{location}', 'r') as mbot:
@@ -415,11 +412,16 @@ end_header
     
 def main(filepath):
     clean_scene()
-    file = import_makerbot(filepath)
-    Pointcloud = import_ply(file)
+    try:
+        name = filepath.split("\\")[-1].split(".")[0]
+        Pointcloud = import_ply(f"{filepath}\\..\\pointclouds\\{name}.ply")
+        print(f"You've used this file before: {filepath}\\..\\pointclouds\\{name}.ply")
+    
+    except:
+        print("This is a new file")
+        file = import_makerbot(filepath)
+        Pointcloud = import_ply(file)
+
     renderMakerbot(Pointcloud)
-
     create_scene()
-
-
 

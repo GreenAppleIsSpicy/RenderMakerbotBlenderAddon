@@ -6,8 +6,8 @@ import sys
 
 
 ADDON_FOLDER_PATH = os.path.dirname(__file__)
-VERSION = (0, 1, 0)
-MODULE_NAME = "RenderMakerbotBlender"
+VERSION = (0, 1, 1)
+MODULE_NAME = "RenderMakerbotBlender active patch"
 ADDON_NAME = (
     f"RenderMakerbotBlender v{VERSION[0]}.{VERSION[1]}.{VERSION[2]}"
 )
@@ -15,7 +15,7 @@ ADDON_NAME = (
 bl_info = {
     "name": "RenderMakerbotBlender v0.1.0",
     "author": "GreenAppleIsSpicy",
-    "version": (0, 1, 0),
+    "version": (0, 1, 1),
     "blender": (4, 3, 0),
     "description": "Personal Addon for blender that allows someone to render 3D prints sliced for the MakerBot Replicator 5th Gen and Replicator+.",
     "category": "Development",
